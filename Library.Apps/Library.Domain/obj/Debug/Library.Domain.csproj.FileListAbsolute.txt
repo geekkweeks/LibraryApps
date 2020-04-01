@@ -1,0 +1,12 @@
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\Library.Domain.exe.config
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\Library.Domain.exe
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\Library.Domain.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\EntityFramework.dll
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\EntityFramework.xml
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\obj\Debug\Library.Domain.csproj.CoreCompileInputs.cache
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\obj\Debug\Library.Domain.csproj.CopyComplete
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\obj\Debug\Library.Domain.exe
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\obj\Debug\Library.Domain.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Domain\obj\Debug\Library.Domain.csprojAssemblyReference.cache

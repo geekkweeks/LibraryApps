@@ -1,0 +1,7 @@
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\obj\Debug\Library.Console.csproj.CoreCompileInputs.cache
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\bin\Debug\Library.Console.exe.config
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\bin\Debug\Library.Console.exe
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\bin\Debug\Library.Console.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\obj\Debug\Library.Console.exe
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\obj\Debug\Library.Console.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Console\obj\Debug\Library.Console.csprojAssemblyReference.cache

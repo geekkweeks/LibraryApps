@@ -1,0 +1,45 @@
+Testing Transaction(customer)
+	-add (V)
+	-Edit get data(V)
+	-List(V)
+	-update(V)
+	-Delete(V)
+	-export excel(V)
+	-export pdf(cacat grand totalny)
+	
+Testing Transaction(Admin)
+	-add (V)
+	-Edit get data(V)
+	-List(V)
+	-update(V)
+	-Delete(V)
+	-export excel(V)
+	-export pdf(cacat grand totalny)
+	
+Testing (Master book)
+	-add (V)
+	-Edit get data(V)
+	-List(V)
+	-update(V)
+	-Delete(V)
+	-export excel(V)
+	-export pdf(V)
+	
+	
+Testing user(Admin)
+	-add (V)
+	-Edit get data(V)
+	-List(V)
+	-update(V)
+	-Delete(V)
+	-validation(V
+	
+
+	
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+	
+	note: destroy table move to common js
+	-resources
+	-kurang master category

@@ -1,0 +1,115 @@
+﻿@using Library.Services.ServiceModels
+@using Library.Common
+
+@model BookServiceModel
+
+@Styles.Render("~/Content/datatable-css")
+@{
+    ViewBag.Title = "Book";
+}
+
+<h2>Books</h2>
+
+<div>
+    <button type="button" class="btn btn-primary" id="btnAdd">Add</button>
+    <button type="button" class="btn btn-success" id="btnExportExcel" onclick="exportfunc('EXCEL')">Export Excel</button>
+    <button type="button" class="btn btn-danger" id="btnExportPdf" onclick="exportfunc('PDF')">Export PDF</button>
+</div>
+<div>
+    <table id="tblBook" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                @*<th>Book ID</th>*@
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Book Category</th>
+                <th>Price </th>
+                <th>IsAvailable </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="area-form" style="display:none">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Insert or Update Master Book</h3>
+                </div>
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "", enctype = "multipart/form-data", id = "formBook" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="box-body">
+                        @Html.HiddenFor(model => model.BookId);
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BookTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BookTitle, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <select class="form-control input-validation-error" data-val="true" data-val-required="category field is required." id="CategoryId" name="CategoryId">
+                                @foreach (var item in Helper.GetMasterCategoryBook())
+                                {
+                                    <option value="@item.Key">@item.Value</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.CheckBoxFor(model => model.IsAvailable, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@Html.Partial("ViewMessage")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datatable-js")
+    @Scripts.Render("~/bundles/common-js")
+    @Scripts.Render("~/bundles/book-js")
+}

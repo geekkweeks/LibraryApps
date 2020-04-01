@@ -1,0 +1,8 @@
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\bin\Debug\Library.Resources.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.csproj.CoreCompileInputs.cache
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.pdb
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.LibraryResources.resources
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.csproj.GenerateResource.cache
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\bin\Debug\Library.Resources.dll.config
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\bin\Debug\Library.Resources.dll
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.dll
