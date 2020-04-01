@@ -50,6 +50,7 @@ var getBookById = function (id) {
                 $('#Author').val(response.Data.Author)
                 $('#CategoryName').val(response.Data.CategoryName)
                 $('#Price').val(response.Data.Price)
+                $('#Total').val("")
             }, //End of AJAX Success function  
 
             failure: function (data) {

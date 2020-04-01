@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Services", "Library
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Common", "Library.Common\Library.Common.csproj", "{74D673E6-8BE2-415E-8BFF-EA23D772CD40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Web.API", "Library.Web.API\Library.Web.API.csproj", "{A0A58C07-01D4-4807-91FB-CB2990305E15}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Console", "Library.Console\Library.Console.csproj", "{D12D22C4-F88D-4953-B2D8-1132553AFAC2}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{74D673E6-8BE2-415E-8BFF-EA23D772CD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74D673E6-8BE2-415E-8BFF-EA23D772CD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74D673E6-8BE2-415E-8BFF-EA23D772CD40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0A58C07-01D4-4807-91FB-CB2990305E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0A58C07-01D4-4807-91FB-CB2990305E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0A58C07-01D4-4807-91FB-CB2990305E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0A58C07-01D4-4807-91FB-CB2990305E15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D12D22C4-F88D-4953-B2D8-1132553AFAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D12D22C4-F88D-4953-B2D8-1132553AFAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12D22C4-F88D-4953-B2D8-1132553AFAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU

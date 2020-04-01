@@ -6,3 +6,4 @@ C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.
 C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\bin\Debug\Library.Resources.dll.config
 C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\bin\Debug\Library.Resources.dll
 C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.dll
+C:\PROJECT\GITHUB\LIBRARY APPS\Library.Apps\Library.Resources\obj\Debug\Library.Resources.csprojAssemblyReference.cache
