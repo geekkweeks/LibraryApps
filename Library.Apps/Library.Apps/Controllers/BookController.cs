@@ -14,6 +14,11 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Data;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using iTextSharp.text.html.simpleparser;
 
 namespace Library.Apps.Controllers
 {
@@ -256,77 +261,213 @@ namespace Library.Apps.Controllers
             }
         }
 
+        //[Authorize(Roles = "Admin,Customer")]
+        //public void ExportPDF()
+        //{
+        //    try
+        //    {
+        //        var list = new List<BookTransactionServiceModel>();
+        //        if (rolename.ToUpper().Equals("ADMIN"))
+        //            list = _bookTransactionService.GetTransactions().ToList();
+        //        else
+        //            list = _bookTransactionService.GetTransactionByCustomer(2, User.Identity.Name).ToList();
+                
+        //        PdfPTable pdfTable = new PdfPTable(8);
+        //        PdfPCell pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Book Title"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Author"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Book Category"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Price"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Days"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Borrower ID"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Borrower Name"));
+        //        pdfTable.AddCell(pdfCell);
+        //        pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Total(Rp)"));
+        //        pdfTable.AddCell(pdfCell);
+               
+
+        //        double grandTotal = 0;
+        //        //int row = 1;
+        //        //foreach (var item in list)
+        //        //{
+        //        //    //book title
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.BookTitle));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //author
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.Author));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //book category
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.CategoryName));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //price
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(item.Price.Value)));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //days
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.Days.Value.ToString()));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //borrower id
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.CreatedBy));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //borrower name
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.FullName));
+        //        //    pdfTable.AddCell(pdfCell);
+        //        //    //total
+        //        //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(item.Total)));
+        //        //    pdfTable.AddCell(pdfCell);                   
+        //        //    grandTotal += item.Total;
+        //        //    row++;
+        //        //}
+
+        //        for(int x = 0; x <= list.Count; x++)
+        //        {
+        //            if(x < list.Count)
+        //            {
+        //                //book title
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].BookTitle));
+        //                pdfTable.AddCell(pdfCell);
+        //                //author
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].Author));
+        //                pdfTable.AddCell(pdfCell);
+        //                //book category
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].CategoryName));
+        //                pdfTable.AddCell(pdfCell);
+        //                //price
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(list[x].Price.Value)));
+        //                pdfTable.AddCell(pdfCell);
+        //                //days
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].Days.Value.ToString()));
+        //                pdfTable.AddCell(pdfCell);
+        //                //borrower id
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].CreatedBy));
+        //                pdfTable.AddCell(pdfCell);
+        //                //borrower name
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(list[x].FullName));
+        //                pdfTable.AddCell(pdfCell);
+        //                //total
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(list[x].Total)));
+        //                pdfTable.AddCell(pdfCell);
+        //                grandTotal += list[x].Total;
+        //            }
+        //            else
+        //            {
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Grand Total"));
+        //                pdfTable.AddCell(pdfCell);
+        //                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(grandTotal)));
+        //                pdfTable.AddCell(pdfCell);
+        //            }
+        //        }
+
+
+        //        //pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Grand Total"));
+        //        //pdfTable.AddCell(pdfCell);
+        //        //pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(grandTotal)));
+        //        //pdfTable.AddCell(pdfCell);
+
+        //        Document pdfDocument = new Document(PageSize.A4,10f,10f,10f,10f);
+        //        PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
+
+        //        pdfDocument.Open();
+        //        pdfDocument.Add(pdfTable);
+        //        pdfDocument.Close();
+
+        //        string pdfName = "Transaction_History" + DateTime.Now.ToString("ddMMyyyy") + ".pdf";
+        //        Response.ContentType = "application/pdf";
+        //        Response.AddHeader("Content-disposition", "attachment; filename=" + pdfName);
+        //        Response.Write(pdfDocument);
+        //        Response.End();
+        //    }
+        //    catch(Exception ex)
+        //    {
+
+        //    }
+        //}
+
         [Authorize(Roles = "Admin,Customer")]
         public void ExportPDF()
         {
             try
-            {
+            {                
+
+                DataTable dt = new DataTable("Transaction");
+                dt.Columns.Add("BookTitle", typeof(string));
+                dt.Columns[0].Caption = "Book Title";
+
+                dt.Columns.Add("Author", typeof(string));
+                dt.Columns[1].Caption = "Author";
+
+                dt.Columns.Add("BookCategory", typeof(string));
+                dt.Columns[2].Caption = "Book Category";
+
+                dt.Columns.Add("Price", typeof(string));
+                dt.Columns[3].Caption = "Price";
+
+                dt.Columns.Add("Days", typeof(string));
+                dt.Columns[4].Caption = "Days";
+
+                dt.Columns.Add("BorrowerID", typeof(string));
+                dt.Columns[5].Caption = "Borrower ID";
+
+                dt.Columns.Add("BorrowerName", typeof(string));
+                dt.Columns[6].Caption = "Borrower Name";
+
+                dt.Columns.Add("Total", typeof(string));
+                dt.Columns[7].Caption = "Total (Rp)";
+
                 var list = new List<BookTransactionServiceModel>();
                 if (rolename.ToUpper().Equals("ADMIN"))
                     list = _bookTransactionService.GetTransactions().ToList();
                 else
                     list = _bookTransactionService.GetTransactionByCustomer(2, User.Identity.Name).ToList();
-                
-                PdfPTable pdfTable = new PdfPTable(8);
-                PdfPCell pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Book Title"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Author"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Book Category"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Price"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Days"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Borrower ID"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Borrower Name"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Total(Rp)"));
-                pdfTable.AddCell(pdfCell);
 
-                double grandTotal = 0;
-                int row = 1;
+                double grantotal = 0;
                 foreach (var item in list)
                 {
-                    //book title
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.BookTitle));
+                    dt.Rows.Add(
+                        item.BookTitle,
+                        item.Author,
+                        item.CategoryName,
+                        Common.Helper.ConvertToCurrency(item.Price.Value),
+                        item.Days.ToString(),
+                        item.CreatedBy,
+                        item.FullName,
+                        Common.Helper.ConvertToCurrency(item.Total)
+                    );
+                    grantotal += item.Total;
+                }
+                dt.Rows.Add(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Grand Total",
+                    Common.Helper.ConvertToCurrency(grantotal)
+                );
+
+               PdfPTable pdfTable = new PdfPTable(dt.Columns.Count);
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    PdfPCell pdfCell = new PdfPCell(new iTextSharp.text.Phrase(dt.Columns[i].Caption));
                     pdfTable.AddCell(pdfCell);
-                    //author
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.Author));
-                    pdfTable.AddCell(pdfCell);
-                    //book category
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.CategoryName));
-                    pdfTable.AddCell(pdfCell);
-                    //price
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(item.Price.Value)));
-                    pdfTable.AddCell(pdfCell);
-                    //days
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.Days.Value.ToString()));
-                    pdfTable.AddCell(pdfCell);
-                    //borrower id
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.CreatedBy));
-                    pdfTable.AddCell(pdfCell);
-                    //borrower name
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(item.FullName));
-                    pdfTable.AddCell(pdfCell);
-                    //total
-                    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(item.Total)));
-                    pdfTable.AddCell(pdfCell);
-                    grandTotal += item.Total;
-                    row++;
                 }
 
-                //for(int x = 0; x < 6; x++)
-                //{
-                //    pdfCell = new PdfPCell(new iTextSharp.text.Phrase(""));
-                //}
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase("Grand Total"));
-                pdfTable.AddCell(pdfCell);
-                pdfCell = new PdfPCell(new iTextSharp.text.Phrase(Common.Helper.ConvertToCurrency(grandTotal)));
-                pdfTable.AddCell(pdfCell);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        var valrow = dt.Rows[i].Field<string>(dt.Columns[j].ColumnName);
+                        PdfPCell pdfCell = new PdfPCell(new iTextSharp.text.Phrase(valrow));
+                        pdfTable.AddCell(pdfCell);
+                    }
+                }
 
-                Document pdfDocument = new Document();
+                Document pdfDocument = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
                 PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
 
                 pdfDocument.Open();
@@ -339,7 +480,7 @@ namespace Library.Apps.Controllers
                 Response.Write(pdfDocument);
                 Response.End();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
